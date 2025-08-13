@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Solutions & - Electrical Services</title>
+    <style>
+        /* General Body & Typography */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #fff;
+            padding: 10px 0;
+            border-bottom: 2px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #004d99; /* Professional blue */
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007acc; /* Lighter, more vibrant blue */
+        }
+
+        .cta-button {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #005f99;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 77, 153, 0.7), rgba(0, 77, 153, 0.7)), url('https://via.placeholder.com/1920x800/004d99/fff?text=Reliable+Electrical+Solutions') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #004d99;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-item i {
+            font-size: 3em;
+            color: #007acc;
+            margin-bottom: 15px;
+        }
+        
+        .service-item h3 {
+            font-size: 1.5em;
+            color: #004d99;
+        }
+
+        /* About Us Section */
+        .about {
+            background-color: #eaf1f8;
+            padding: 80px 20px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item .client-name {
+            font-weight: bold;
+            color: #004d99;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #004d99;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .contact button {
+            background-color: #007acc;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #005f99;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #007acc;
+        }
+
+        /* Font Awesome for Icons */
+        .icon {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Power Solutions & Co.</a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="cta-button">Get a Free Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Expert Electrical Services for Your Home & Business</h1>
+            <p>Providing safe, reliable, and efficient electrical solutions with a commitment to quality and customer satisfaction.</p>
+            <a href="#contact" class="cta-button">Schedule a Service Today</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Residential Wiring</h3>
+                    <p>From new home wiring to upgrades and repairs, we handle all your residential electrical needs safely and efficiently.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-industry"></i>
+                    <h3>Commercial Services</h3>
+                    <p>Keep your business running smoothly with our commercial electrical installation, maintenance, and emergency services.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting Installation</h3>
+                    <p>Upgrade your space with professional indoor and outdoor lighting solutions, including LED conversions and smart lighting.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-plug"></i>
+                    <h3>Panel Upgrades</h3>
+                    <p>Ensure your electrical system can handle modern demands with a safe and effective panel upgrade from our experts.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Troubleshooting & Repair</h3>
+                    <p>We quickly diagnose and fix electrical issues, from flickering lights to faulty outlets, ensuring your safety.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-solar-panel"></i>
+                    <h3>Solar & EV Charging</h3>
+                    <p>Embrace a greener future with our solar panel installations and electric vehicle charging station setups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Company</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded on a commitment to excellence and safety, Power Solutions & Co. has been serving the community for over 20 years. Our team of certified and experienced electricians is dedicated to providing high-quality workmanship and exceptional customer service on every project, big or small. We believe in transparent pricing, clear communication, and delivering results that exceed your expectations.</p>
+                    <p>Your safety is our top priority. We adhere to the highest industry standards and local codes to ensure every job is done right, the first time. We are fully licensed, bonded, and insured for your peace of mind.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400/007acc/fff?text=Our+Team+at+Work" alt="Electrical team working">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"The team at Power Solutions & Co. did an excellent job upgrading my home's electrical panel. They were professional, on time, and the work was flawless."</p>
+                    <p class="client-name">- Jane Doe</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>"We've used them for all our commercial projects. Their expertise and attention to detail are unmatched. Highly recommend!"</p>
+                    <p class="client-name">- John Smith, Business Owner</p>
+                </div>
+                <div class="testimonial-item">
+                    <p>"A huge thank you to the technician who fixed our flickering lights. He was able to diagnose the problem quickly and had it resolved in no time."</p>
+                    <p class="client-name">- Sarah Lee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us for a Free Quote</h2>
+            <p>Ready to start your next project? Get in touch with us today!</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Power Solutions & Co. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
